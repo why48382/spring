@@ -23,5 +23,26 @@ public class ReviewDto {
                     .score(review.getScore())
                     .build();
         }
+
+
+    }
+
+    @Getter
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class ReviewReq {
+        private Long id;
+        private String content;
+        private Double score;
+
+        public Review toEntity() {
+            Review entity = Review.builder()
+                    .id(id)
+                    .content(content)
+                    .score(score)
+                    .build();
+            return entity;
+        }
     }
 }
